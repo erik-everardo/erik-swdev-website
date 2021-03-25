@@ -16,22 +16,21 @@
 }
 .main-bar{
     display: flex;
-    background-color:rgb(20, 109, 225,0.8);
-    position: sticky;
     width: 100%;
     z-index: 1000;
-    top:0;
     flex-wrap: wrap;
     justify-content: center;
     background-blend-mode: color-burn
 }
+
 .nav-item{
     display: flex;
     color:white;
     padding:20px 10px;
 }
 .nav-item:hover {
-    background-color: black;
+    background-color: rgb(20, 109, 225);
+    color: white;
 }
 
 .rounded-card{
@@ -59,6 +58,9 @@
     overflow: auto;
     position: sticky;
     top:0;
+    background-color:rgb(20, 109, 225,0.9);
+    z-index: 10;
+    justify-content: center;
 }
 
 #foto {
