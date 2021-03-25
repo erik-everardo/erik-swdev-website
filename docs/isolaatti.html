@@ -19,11 +19,90 @@
     <main class="container">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-10">
-                <h2 class="mt-2">Isolaatti</h2>
-                <div class="card">
+            <div class="col-8">
+                <h2 class="mt-2">Resumen de Isolaatti</h2>
+                <div class="card mt-2">
                     <div class="card-body">
                         <h3>Introducción</h3>
+                        <p>Isolaatti es una aplicación cuyo objetivo es crear una comunidad para personas interesadas en
+                            la separación de instrumentos de canciones por medio de IA. Algunas de sus caracteristicas
+                            son:</p>
+                        <ul>
+                            <li>Obtención de pistas intrumentales (bajo, percusiones y voces) utilizando demucs</li>
+                            <li>Mezclador de pistas en el navegador.</li>
+                            <li>Generación de proyectos.</li>
+                            <li>Creación de pistas propias con el micrófono.</li>
+                            <li>Comunidad estilo red social, que permite: </li>
+                            <ul>
+                                <li>Realizar publicaciones de texto simple</li>
+                                <li>Compartir proyectos para permitir cooperación (en desarrollo)</li>
+                                <li>Likes y comentarios (casi listo)</li>
+                                <li>Comentarios de audio (planeado)</li>
+                            </ul>
+                            <li>Trabajo colaborativo en tiempo real en el mezclador de pistas (planeado)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h3>¿Cómo está hecho?</h3>
+                        <p>Isolaatti tiene varios componentes, que juntos forman un sistema un poco grande (solo un
+                            poco). Estos componentes incluyen lo necesario para hacer funcionar la aplicación web, la
+                            aplicación para Android, servidores de separación de pistas, almacenamiento. A continuación,
+                            detallo cada componente y cómo interactúan.
+                        </p>
+
+                        <h4>Api Web y base de datos</h4>
+                        <p>
+                            Esta es la parte que sustenta la aplicación en el servidor. Se utiliza <b>ASP.NET Core</b> y
+                            <b>SQL Server 2019</b>. Tanto la aplicación web como la de Android consumen esta API para
+                            recuperar datos de los usuarios registrados, así como guardar preferencias e información.
+                        </p>
+                        <p>
+                            Para realizar consultas a la base de datos se utiliza <b>Entity Framework</b>, lo cual
+                            reduce el riesgo de fallos por <em>hardcodear</em> queries.
+                        </p>
+
+                        <h4>Aplicación web</h4>
+                        <p>
+                            La aplicación Web es "hibrida", o dicho de otro modo, la mayor parte del contenido es
+                            renderizado en el servidor y se envía el HTML al cliente (se utiliza <b>Razor</b> para
+                            esto), sin embargo, también se utiliza <b>Vue.js</b> para generar componentes en la interfaz
+                            gráfica de manera más dinámica. Por ejemplo, para mostrar el <em>Feed</em>.
+                        </p>
+                        <img src="imagenes-isolaatti/isolaatti-feed.png" class="w-100">
+
+                        <h5 class="mt-2">Mezclador de Audio con Web Audio API <span class="text-danger">(en desarrollo)</span></h5>
+                        <p>
+                            Isolaatti incluye un mezclador de audio, el cual permite, en primera instancia, manejar la
+                            ganancia y balance de las pistas (las generadas por demucs). Además, permitirá al usuario
+                            grabar pistas y agregarlas a la mezcla.
+                        </p>
+                        <p>
+                            Se hace uso de API de Audio Web, lo cual permite de manera sencilla, agregar efectos de sonido, 
+                            como ecualizador gráfico o reverb. Además de muchas otras cosas interesantes y divertidas, como 
+                            visualizaciones en base al sonido.
+                        </p>
+                        <img src="imagenes-isolaatti/isolaatti-mixer-1.png" alt="Mezclador de Isolaatti" class="w-100">
+                        <p>
+                            El mezclador permite, como se puede observar, asignar colores a las pistas, colocarles un nombre. 
+                            Además, ofrece un entorno simple y agradable para jugar con las pistas
+                        </p>
+
+                        <h5 class="mt-2">Comunidad <span class="text-danger">(en desarrollo)</span></h5>
+                        <p></p>
+
+                        <h5>Colaboración en tiempo real</h5>
+                        <p></p>
+
+                        <h4>Aplicación para Android</h4>
+                        <p></p>
+
+                        <h4>Servicio demucs y cola de procesamiento</h4>
+                        <p></p>
+
+                        <h4>almacenamiento de archivos</h4>
+                        <p></p>
                     </div>
                 </div>
             </div>
