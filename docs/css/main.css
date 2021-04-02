@@ -6,8 +6,8 @@
     padding: 30px;
     background-image: url("../res/codigo.png") ;
     background-position: center;
-    background-color:rgb(20, 109, 225);
-    background-blend-mode:color-dodge;
+    background-color:rgb(24, 24, 24);
+    background-blend-mode:color-dodge
 }
 .main-bar #header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
