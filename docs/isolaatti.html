@@ -25,10 +25,11 @@
                     <div class="card-body">
                         <h3>Introducción</h3>
                         <p>Isolaatti es una aplicación cuyo objetivo es crear una comunidad para personas interesadas en
-                            la separación de instrumentos de canciones por medio de IA. Algunas de sus caracteristicas
-                            son:</p>
+                            la separación de instrumentos de canciones por medio de IA. Algunas de sus características
+                            son:
+                        </p>
                         <ul>
-                            <li>Obtención de pistas intrumentales (bajo, percusiones y voces) utilizando demucs</li>
+                            <li>Obtención de pistas instrumentales (bajo, percusiones y voces) utilizando demucs</li>
                             <li>Mezclador de pistas en el navegador.</li>
                             <li>Generación de proyectos.</li>
                             <li>Creación de pistas propias con el micrófono.</li>
@@ -36,7 +37,7 @@
                             <ul>
                                 <li>Realizar publicaciones de texto simple</li>
                                 <li>Compartir proyectos para permitir cooperación (en desarrollo)</li>
-                                <li>Likes y comentarios (casi listo)</li>
+                                <li>Likes y comentarios</li>
                                 <li>Comentarios de audio (planeado)</li>
                             </ul>
                             <li>Trabajo colaborativo en tiempo real en el mezclador de pistas (planeado)</li>
@@ -46,12 +47,12 @@
                 <div class="card mt-2">
                     <div class="card-body">
                         <h3>¿Cómo está hecho?</h3>
-                        <p>Isolaatti tiene varios componentes, que juntos forman un sistema un poco grande (solo un
+                        <p>
+                            Isolaatti tiene varios componentes, que juntos forman un sistema un poco grande (solo un
                             poco). Estos componentes incluyen lo necesario para hacer funcionar la aplicación web, la
                             aplicación para Android, servidores de separación de pistas, almacenamiento. A continuación,
                             detallo cada componente y cómo interactúan.
                         </p>
-
                         <h4>Api Web y base de datos</h4>
                         <p>
                             Esta es la parte que sustenta la aplicación en el servidor. Se utiliza <b>ASP.NET Core</b> y
@@ -62,47 +63,138 @@
                             Para realizar consultas a la base de datos se utiliza <b>Entity Framework</b>, lo cual
                             reduce el riesgo de fallos por <em>hardcodear</em> queries.
                         </p>
-
                         <h4>Aplicación web</h4>
                         <p>
-                            La aplicación Web es "hibrida", o dicho de otro modo, la mayor parte del contenido es
+                            La aplicación Web es "híbrida", o dicho de otro modo, la mayor parte del contenido es
                             renderizado en el servidor y se envía el HTML al cliente (se utiliza <b>Razor</b> para
                             esto), sin embargo, también se utiliza <b>Vue.js</b> para generar componentes en la interfaz
                             gráfica de manera más dinámica. Por ejemplo, para mostrar el <em>Feed</em>.
                         </p>
                         <img src="imagenes-isolaatti/isolaatti-feed.png" class="w-100">
-
-                        <h5 class="mt-2">Mezclador de Audio con Web Audio API <span class="text-danger">(en desarrollo)</span></h5>
+                        <h5 class="mt-2">
+                            Mezclador de Audio con Web Audio API <span class="text-danger">(en
+                                desarrollo)</span>
+                        </h5>
                         <p>
                             Isolaatti incluye un mezclador de audio, el cual permite, en primera instancia, manejar la
                             ganancia y balance de las pistas (las generadas por demucs). Además, permitirá al usuario
                             grabar pistas y agregarlas a la mezcla.
                         </p>
                         <p>
-                            Se hace uso de API de Audio Web, lo cual permite de manera sencilla, agregar efectos de sonido, 
-                            como ecualizador gráfico o reverb. Además de muchas otras cosas interesantes y divertidas, como 
-                            visualizaciones en base al sonido.
+                            Se hace uso de API de Audio Web, lo cual permite de manera sencilla, agregar efectos de
+                            sonido, como ecualizador gráfico o reverb. Además de muchas otras cosas interesantes y divertidas,
+                            como visualizaciones en base al sonido.
                         </p>
                         <img src="imagenes-isolaatti/isolaatti-mixer-1.png" alt="Mezclador de Isolaatti" class="w-100">
                         <p>
-                            El mezclador permite, como se puede observar, asignar colores a las pistas, colocarles un nombre. 
-                            Además, ofrece un entorno simple y agradable para jugar con las pistas
+                            El mezclador permite, como se puede observar, asignar colores a las pistas, colocarles un
+                            nombre. Además, ofrece un entorno simple y agradable para jugar con las pistas
                         </p>
-
                         <h5 class="mt-2">Comunidad <span class="text-danger">(en desarrollo)</span></h5>
-                        <p></p>
-
-                        <h5>Colaboración en tiempo real</h5>
-                        <p></p>
-
-                        <h4>Aplicación para Android</h4>
-                        <p></p>
-
+                        <p>
+                            Se cuenta con características sencillas de red social básica. Incluye cosas como: publicaciones con
+                            formato de texto avanzado, likes, comentarios (en forma de conversación o hilo), comentarios con
+                            audio y se trabaja en permitir compartir proyectos dentro de la misma aplicación para permitir colaboración.
+                        </p>
+                        <div class="d-flex flex-column">
+                            <img src="imagenes-isolaatti/feed.png" class="w-100 mt-1">
+                            <img src="imagenes-isolaatti/threads.png" class="w-100 mt-1">
+                            <img src="imagenes-isolaatti/post-editor.png" class="w-100 mt-1">
+                        </div>
+                        <h5 class="mt-2">Colaboración en tiempo real <span class="text-danger">(etapa de
+                                planeación)</span></h5>
+                        <p>
+                            De esto no hay señales de existencia en la aplicación aun, sin embargo, se planea permitir
+                            la colaboración en tiempo real para modificar proyectos existentes (como lo que se puede hacer
+                            con Microsoft Word o Google Documents).
+                        </p>
+                        <p>De esto se puede adelantar que se hará uso de Node.js y Socket.io.</p>
+                        <h4 class="mt-2">Aplicación para Android</h4>
+                        <p>
+                            La aplicación de Android fue, de hecho, creada antes que la aplicación web, pero ahora se ha
+                            decidido dar más soporte a esta ultima; la razón es facilitar a todos los usuarios el
+                            acceso, además de más libertad al lanzar actualizaciones, las cuales pueden ser hechas al
+                            instante, y no se necesita que el usuario descargue nada. Lo anteriormente mencionado no
+                            quiere decir que no se planee continuar con el desarrollo de la app para Android.
+                        </p>
+                        <h5 class="mt-2">Características actuales</h5>
+                        <p>La versión de Android está bastante desfasada respecto a su homónimo web, aun así es posible
+                            utilizarla si se desea. Sin embargo, dado su estado inmaduro, se encuentra en estado de
+                            pruebas internas, por lo que no es posible descargarla de Google Play Store (ni alguna otra
+                            tienda). Existen dos opciones para probar la aplicación para Android:
+                        </p>
+                        <h6>Descarga de APK</h6>
+                        <p>
+                            Esta es la forma más fácil, solo debes ir al repositorio de la aplicación y localizar el
+                            APK. Sin embargo, para algunos puede resultar confuso instalar manualmente APKs, por lo que
+                            es necesario revisar su dispositivo en busca de la opción correcta para permitir la
+                            instalación de APKs de fuentes desconocidas.
+                        </p>
+                        <p>
+                            <a href="https://github.com/erik-everardo/isolaatti_releases/releases/tag/internal-2">[APK] Isolaatti para Android</a>
+                        </p>
+                        <h6>Programa de verificadores internos en Google Play Store</h6>
+                        <p>
+                            Está forma es un poco más laboriosa, pero podrá descargar la aplicación desde Google Play
+                            Store, disfrutando de las ventajas
+                            de las actualizaciones automáticas. <a href="verificadores-isolaatti.html">Más
+                                información</a>.
+                        </p>
+                        <h5>Capturas de pantalla</h5>
+                        <p>Solo como referencia, incluyo algunas capturas de pantalla.</p>
+                        <div class="d-flex overflow-auto" id="galeria-isolaatti-android">
+                            <img src="imagenes-isolaatti/isolaatti-android-1.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-2.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-3.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-4.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-5.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-6.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-7.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-8.png">
+                            <img src="imagenes-isolaatti/isolaatti-android-9.png">
+                        </div>
+                        <p>
+                            Tome en cuenta que la aplicación de Android solo permite:
+                        </p>
+                        <ul>
+                            <li>Subir archivos de audio para ser procesados por demucs.</li>
+                            <li>Gestionar proyectos guardados</li>
+                            <li>Modificar el perfil</li>
+                            <li>Recibir notificaciones cuando un archivo (propio) haya sido procesado.</li>
+                            <li>Gestionar notificaciones</li>
+                        </ul>
+                        <p>
+                            Por el momento, para acceder a todas las características, es necesario utilizar la versión
+                            web.
+                        </p>
                         <h4>Servicio demucs y cola de procesamiento</h4>
-                        <p></p>
-
-                        <h4>almacenamiento de archivos</h4>
-                        <p></p>
+                        <p>
+                            Este servicio es la parte más cara de mantener, por lo que no está siempre disponible. Por
+                            el momento es una sola maquina, la cual está conectada al servidor principal y este le avisa
+                            cuando tenga algo que procesar. Últimamente se ha estado experimentando con múltiples
+                            instancias de este servicio, mediante virtualización, y los resultados han sido alentadores.
+                        </p>
+                        <h4>Almacenamiento de archivos</h4>
+                        <p>
+                            Este es el almacenamiento de las pistas producidas por demucs (el servicio mencionado
+                            anteriormente las deposita aquí) y demás archivos estáticos generados por los usuarios (como
+                            fotos de perfil, comentarios de audio, etc.) son almacenados en Google Cloud Storage. Este
+                            servicio es limitado (es gratuito), por lo que no se garantiza la disponibilidad a nivel 
+                            masivo de usuarios.
+                        </p>
+                    </div>
+                </div>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <h3>Estar al tanto</h3>
+                        <p>Le recomiendo seguir la <a href="https://www.facebook.com/isolaatti">página de Isolaatti en Facebook</a>, en ella se publican las nuevas
+                            características y se
+                            recibe retroalimentación.
+                        </p>
+                        <p>
+                            Puede probar ahora la versión web visitando: <a
+                                href="https://isolaattiapi.azurewebsites.net/">https://isolaattiapi.azurewebsites.net/</a>
+                        </p>
                     </div>
                 </div>
             </div>
