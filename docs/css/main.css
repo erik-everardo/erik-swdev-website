@@ -83,3 +83,17 @@
     max-height: 300px;
     margin: 5px;
 }
+
+#header-isolaatti-card{
+    background-image: url("../imagenes-isolaatti/isolaatti-mixer-1.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#header-isolaatti-card > h3 {
+    backdrop-filter: blur(10px);
+    background-color: rgba(92, 0, 184, 0.5);
+    padding: 10px;
+    margin: 0;
+    color:white;
+}
