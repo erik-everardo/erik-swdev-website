@@ -1,0 +1,41 @@
+/*
+Juntar una de estas clases con la clase "cicle-picture"
+*/
+
+.dotnet-logo {
+    background-image: url("../res/logos/dotnet.png");
+}
+.nodejs-logo {
+    background-image: url("../res/logos/Node.js_logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.302);
+}
+.azure-logo {
+    background-image: url("../res/logos/azure-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.672);
+}
+.firebase-logo {
+    background-image: url("../res/logos/firebase.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.672);
+}
+.android-sdk-logo {
+    background-image: url("../res/logos/android.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgba(56, 73, 130, 0.672);
+}
+.js-code {
+    background-image: url("../res/logos/javascript-code.png");
+    background-position: center;
+    background-size: contain;
+}
+.smartphone {
+    background-image: url("../res/logos/smartphone.jpg");
+    background-position: center;
+    background-size: contain;
+}

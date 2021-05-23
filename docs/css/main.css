@@ -2,12 +2,12 @@
 #header {
     color:white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    padding: 30px;
-    background-image: url("../res/codigo.png") ;
+    padding: 15px 30px;
+    background-image: url("../res/codigo.png");
     background-position: center;
     background-color:rgb(24, 24, 24);
-    background-blend-mode:color-dodge
+    background-blend-mode:color-dodge;
+    background-attachment: fixed;
 }
 .main-bar #header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -26,7 +26,9 @@
 .nav-item{
     display: flex;
     color:white;
-    padding:20px 10px;
+    padding:20px;
+    text-decoration: none;
+    align-items: center;
 }
 .nav-item:hover {
     background-color: rgb(20, 109, 225);
@@ -49,7 +51,7 @@
 
 .rounded-card-blue {
     border: 1px solid rgb(20, 109, 250);
-    background-color:rgb(20, 109, 225);
+    background-color:rgb(83, 135, 204);
     background-blend-mode: color-burn
 }
 
@@ -64,12 +66,25 @@
 }
 
 #foto {
+    background-image: url("../res/erik.jpg");
+}
+.circle-picture {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-image: url("../res/erik.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.circle-picture::after {
+    content: attr(nombre);
+    position:absolute;
+    background-color: black;
 }
 
 .divisor {
@@ -95,5 +110,57 @@
     background-color: rgba(92, 0, 184, 0.5);
     padding: 10px;
     margin: 0;
+    color:white;
+}
+
+footer {
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 150px;
+    box-sizing: border-box;
+    box-shadow: black;
+    background-image: url("../res/codigo.png");
+    background-position: bottom;
+    background-color:rgb(56, 95, 194);
+    background-blend-mode:darken;
+    flex-wrap: wrap;
+    background-attachment: fixed;
+}
+
+.bottom-info-item {
+    color: white;
+    margin: 30px;
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.links::before {
+    content: "Contáctame";
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+.no-before::before {
+    content: "";
+}
+
+.links > div {
+    display: flex;
+    justify-content: center;
+
+}
+
+.link {
+    margin: 0 5px;
+}
+.link a{
+
     color:white;
 }
